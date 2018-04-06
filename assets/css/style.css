@@ -1,4 +1,54 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  background: #c0c0b6;
+}
+
+*, *:before, *:after, {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: inherit;
+  position: relative;
+  background-image: url("../images/theOfficeBackground2.jpg");
+  background-size: 120% 100%;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+}
+
+.jumbotron {
+
+}
+
+.gameContainer{
+  background-color: rgba(76, 175, 80, 0.3);
+  height: 400px;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 1% 1%;
+
+}
+
+.gameContainer p {
+  padding: 1%;
+  border-radius: 10px;
+
+}
+
+footer {
+font-family: monospace;
+font-size: 14px;
+width: 100%;
+position: absolute;
+bottom: 0;
+left: 0;
+background-color: #272e36;
+color: white;
+padding: 2% 0 2% 0;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+text-align: center;
 }
