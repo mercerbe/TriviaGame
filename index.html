@@ -16,7 +16,7 @@
 
 <body>
   <div class="wrapper">
-  <img id="bg" src="assets/images/theOfficeBackground2.jpg" alt="">
+    <img id="bg" src="assets/images/theOfficeBackground2.jpg" alt="">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a href="https://www.nbc.com" class="navbar-brand"><img src="assets/images/NBC_logo.png" width="40px"></a>
       <a class="navbar-brand" href="#">The Office<small> &copy</small></a>
@@ -60,9 +60,7 @@
             </p>
             <div class="collapse" id="collapseExample">
               <div class="card card-body">
-                Answer trivia questions about the TV show "The Office" to score points and win dundies!
-                Be careful to answer questions before the time runs out! Questions will be true/false,
-                multiple-choice and prompt. Good Luck!
+                Answer trivia questions about the TV show "The Office" to score points and win dundies! Be careful to answer questions before the time runs out! Questions will be true/false, multiple-choice and prompt. Good Luck!
               </div>
             </div>
             <hr class="my-1">
@@ -108,41 +106,49 @@
       </div>
     </div>
 
-<div class="row">
-    <div class="container-fluid gameContainer col-7">
-      <div id="gameArea">
-        <div class="row">
-        <p class= "col-md-3 bg-dark text-white gameP">Timer:
-          <span id="timer"></span>
-        </p>
-        <p class="col-md-3 bg-dark text-white gameP">Correct Answers:
-          <span id="correctAnswers"></span>
-        </p>
-        <p class="col-md-3 bg-dark text-white gameP">Incorrect Answers:
-          <span id="IncorrectAnswers"></span>
-        </p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container-fluid gameContainer col-7">
+          <div id="gameArea">
+            <div class="row">
+              <p class="col-md-3 bg-dark text-white gameP">Timer:
+                <span id="timer"></span>
+              </p>
+              <p class="col-md-3 bg-dark text-white gameP">Correct Answers:
+                <span id="correctAnswers"></span>
+              </p>
+              <p class="col-md-3 bg-dark text-white gameP">Incorrect Answers:
+                <span id="IncorrectAnswers"></span>
+              </p>
+            </div>
+            <form class="questions" action="index.html" method="post">
+
+
+            </form>
+          </div>
         </div>
-        <form class="questions" action="index.html" method="post">
-
-
-        </form>
+        <div class="col-4 scottPic">
+            <div class="overlay">
+              "You miss 100% of the shots you don't take."
+              <br>
+                                    -Wane Gretsky
+                                    <br>
+                                            -Michael Scott
+            </div>
+        </div>
       </div>
-    </div>
-    <div class="col-4">
-
-    </div>
     </div>
   </div>
 
 
 
 
-<footer>&copyBenMercerCodes</footer>
-      <script type="text/javascript" src="assets/javascript/app.js"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="jquery.backstretch.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <footer>&copyBenMercerCodes</footer>
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="jquery.backstretch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
