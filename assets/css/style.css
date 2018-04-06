@@ -10,8 +10,8 @@ html {
 
 #bg {
   position: fixed;
-  bottom:0;
-  left:0;
+  bottom: 0;
+  left: 0;
   height: 70%;
   width: 120%;
 }
@@ -25,39 +25,60 @@ body {
   background-color: #c0c0b6;
 }
 
-.jumbotron {
-  border: 2px solid black;
-  padding-top: 1%;
-  padding-bottom: 1%;
+.navbar {
+  border-bottom: 2px solid rgb(22, 176, 220);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-.gameContainer{
-  background-color: rgba(76, 175, 80, 0.3);
+small {
+  font-size: 8px;
+}
+
+.jumbotron {
+  border: 2px solid rgb(22, 176, 220);
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-family: 'PT Mono', monospace;
+  letter-spacing: -1px;
+  box-shadow: 5px 10px 5px rgb(34,34,34);
+}
+
+.btn {
+  background-color: rgb(22, 176, 220);
+  border: none;
+}
+
+.gameContainer {
+  font-family: 'PT Mono', monospace;
+  letter-spacing: -1px;
+  background-color: rgba(4, 68, 192, 0.3);
   height: 500px;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid rgb(22, 176, 220);
   padding: 1% 2% 1% 2%;
-
+  box-shadow: 5px 10px 5px rgb(34,34,34);
 }
 
 .gameContainer p {
   padding: 2%;
+  margin-left: 1%;
   border-radius: 10px;
   text-align: center;
-
 }
 
 footer {
-font-family: monospace;
-font-size: 14px;
-width: 100%;
-position: absolute;
-bottom: 0;
-left: 0;
-background-color: #272e36;
-color: white;
-padding: 2% 0 2% 0;
-border-top-right-radius: 10px;
-border-top-left-radius: 10px;
-text-align: center;
+  border-top: 2px solid rgb(22, 176, 220);
+  font-family: Arial;
+  font-size: 14px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #272e36;
+  color: white;
+  padding: 2% 0 2% 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  text-align: center;
 }
