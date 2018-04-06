@@ -1,11 +1,19 @@
 html {
   box-sizing: border-box;
   height: 100%;
-  background: #c0c0b6;
+  overflow-x: hidden;
 }
 
 *, *:before, *:after, {
   box-sizing: inherit;
+}
+
+#bg {
+  position: fixed;
+  bottom:0;
+  left:0;
+  height: 70%;
+  width: 120%;
 }
 
 body {
@@ -13,28 +21,29 @@ body {
   min-width: 100%;
   box-sizing: inherit;
   position: relative;
-  background-image: url("../images/theOfficeBackground2.jpg");
-  background-size: 120% 100%;
-  background-repeat: no-repeat;
-  margin-top: 100px;
+  /*background-image: url("../images/theOfficeBackground2.jpg");*/
+  background-color: #c0c0b6;
 }
 
 .jumbotron {
-
+  border: 2px solid black;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .gameContainer{
   background-color: rgba(76, 175, 80, 0.3);
-  height: 400px;
+  height: 500px;
   border-radius: 10px;
   border: 2px solid black;
-  padding: 1% 1%;
+  padding: 1% 2% 1% 2%;
 
 }
 
 .gameContainer p {
-  padding: 1%;
+  padding: 2%;
   border-radius: 10px;
+  text-align: center;
 
 }
 
