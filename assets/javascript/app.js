@@ -5,8 +5,8 @@ var index = 0
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var totalScore = (correctAnswers * 100) - (incorrectAnswers * 100);//append to an element
-var gameTimer;
-var time = 10;
+var time = 11;
+var seconds;
 
 //Question objects
 var questionsArray = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
@@ -28,23 +28,28 @@ var q10 = {}
 
 //functions
 function runTimer() {
-  time = 10;
-  clearInterval(gameTimer);
-  setInterval(timeLeft,1000);
+  clearInterval(seconds);
+  setInterval(timeLeft, 1000);
 };
+
 function timeLeft() {
+  time--;
   $("#timer").html(time + " Seconds Remaining");
   $("#timer").attr("value", time);
-  time--;
   if (time === 0){
+    stopTimer();
     setTimeout(function() {
       alert("Out Of Time!");
     }, 500);
     incorrectAnswers++;
     document.getElementById("incorrectAnswers").innerHTML = incorrectAnswers;
-    runTimer();
+    time = 11;
   };
-};//end of timer
+};
+
+function stopTimer() {
+  clearInterval(seconds);
+};//end of timer//
 
 function loadQuestion() {
   $(".questions").append()
