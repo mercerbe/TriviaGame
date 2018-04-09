@@ -64,7 +64,7 @@
               </div>
             </div>
             <hr class="my-1">
-            <p>Click "Play" To Start The Game!</p>
+            <p>Click "Start" To Play The Game!</p>
             <p class="lead">
               <a class="btn btn-primary btn-lg" id="startbtn" href="#" role="button">Start</a>
             </p>
@@ -115,15 +115,21 @@
                 <span id="timer"></span>
               </p>
               <p class="col-md-3 bg-dark text-white gameP">Correct Answers:
-                <span id="correctAnswers">0</span>
+                <span id="correctAnswers"></span>
               </p>
               <p class="col-md-3 bg-dark text-white gameP">Incorrect Answers:
-                <span id="incorrectAnswers">0</span>
+                <span id="incorrectAnswers"></span>
               </p>
             </div>
-            <form class="questions" action="index.html" method="post">
-
-
+            <form class="questions" action="" method="">
+                  <div class="trivaInfo" id="question"></div>
+                  <div class="triviaInfo" id="result"></div>
+                  <ul class="triviaInfo" id="answerChoices">
+                    <button type="button" class="answer" data-answerChoice=0></button>
+                    <button type="button" class="answer" data-answerChoice=1></button>
+                    <button type="button" class="answer" data-answerChoice=2></button>
+                    <button type="button" class="answer" data-answerChoice=3></button>
+                  </ul>
             </form>
           </div>
         </div>
