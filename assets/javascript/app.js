@@ -1,5 +1,3 @@
-
-
 //Global Variables
 var index = 0
 var correctAnswers = 0;
@@ -9,6 +7,7 @@ var time = 10;
 var answerTime = 3;
 var seconds;
 var gameLength;
+var currentQuestion;
 
 //Questions array and question objects
 var questionsArray = [
@@ -74,7 +73,7 @@ var questionsArray = [
 },
 ];
 
-//functions
+//FUNCTIONS:
 //timer
 function runTimer() {
   clearInterval(seconds);
@@ -87,9 +86,10 @@ function timeLeft() {
   $("#timer").attr("value", time);
   if (time === 0){
     stopTimer();
-    setTimeout(function() {
-      alert("Out Of Time!");
-    }, 500);
+    $("#question").hide();
+    $("#answerChoices").hide();
+    $("#result").show().text("Out of Time! " + "Correct answer: " + currentQuestion.answerArray[currentQuestion.answer]);
+    setTimeout(loadQuestion, answerTime * 1000);
     incorrectAnswers++;
     document.getElementById("incorrectAnswers").innerHTML = incorrectAnswers;
     time = 10;
@@ -108,6 +108,7 @@ function startGame() {
   $("#question").html("<img id='dwightStart' src='assets/images/dwightQuote.webp'/>");
   $("#result").hide();
   $("#answerChoices").hide();
+  $("#restart").hide().on("click", startGame);
   //$(".answer").empty();
   correctAnswers = 0;
   incorrectAnswers = 0;
@@ -140,27 +141,42 @@ function loadQuestion() {
 
 //player makes a guess
 function guessMade() {
-  if ($(this).data("answerChoice") == curentQuestion.answer) {
+  if (+$(this).attr("value") == currentQuestion.answer) {
     correctAnswers++;
+    $("#correctAnswers").text(correctAnswers);
+    resultCorrect();
+  } else {
+    incorrectAnswers++;
+    $("#incorrectAnswers").text(incorrectAnswers);
+    resultIncorrect();
   }
 };
 
-//end of each guess screen
-function result() {
-  $("#result").text();
+//end of each guess Correct Screen
+function resultCorrect() {
+  $("#question").hide();
+  $("#answerChoices").hide();
+  $("#result").show().text("Correct!");
+  setTimeout(loadQuestion, answerTime * 1000);
+  runTimer();
+};
+
+//end of each guess Incorrect Screen
+function resultIncorrect() {
+  $("#question").hide();
+  $("#answerChoices").hide();
+  $("#result").show().text("Incorrect!" + "Correct answer: " + currentQuestion.answerArray[currentQuestion.answer]);
   setTimeout(loadQuestion, answerTime * 1000);
 };
-
 //show score at end of all questions
 function showScore() {
-  $("#question").text("Your Score for this round is: " + totalScore + " Refresh to play again!");
+  $("#question").text("Your Score for this round is: " + totalScore + " Click Restart to Play Again!");
+  $("#restart").show();
 };
 
-
+//Gameplay
 $(document).ready(function() {
-//GamePlay
 startGame();
-
 });
 
 

@@ -81,7 +81,9 @@ ul{
 
 #dwightStart {
   width: 100%;
-  height: auto;
+  max-height: 350px;
+  max-width: 450px;
+  min-height: 100px;
 }
 
 .answer{
