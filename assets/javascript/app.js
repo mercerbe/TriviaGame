@@ -95,7 +95,21 @@ function restartTimer() {
   clearInterval(timer);
   timeToGuess = 10;
   $("#timer").empty();
-};//end of timer//
+};
+
+$("#pausebtn").on("click", function(){
+  if($("#pausebtn").text() === "Pause"){
+    clearInterval(timer);
+    $(".answer").prop("disabled", true);
+    $("#pausebtn").text("Resume");
+  } else {
+    timer = setInterval(timeLeft, 1000);
+    timeLeft(timer);
+    $(".answer").prop("disabled", false);
+    $("#pausebtn").text("Pause");
+  }
+
+});//end of timer//
 
 //startgame
 function startGame() {
