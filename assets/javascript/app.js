@@ -2,11 +2,10 @@
 var index = 0
 var correctAnswers = 0;
 var incorrectAnswers = 0;
-var totalScore = (correctAnswers * 100) - (incorrectAnswers * 100);//append to an element
-var time = 10;
 var answerTime = 3;
+var timeToGuess = 10;
+var timer;
 var seconds;
-var gameLength;
 var currentQuestion;
 
 //Questions array and question objects
@@ -75,36 +74,34 @@ var questionsArray = [
 
 //FUNCTIONS:
 //timer
-function runTimer() {
-  clearInterval(seconds);
-  setInterval(timeLeft, 1000);
-};
-
 function timeLeft() {
-  time--;
-  $("#timer").html(time + " Seconds Remaining");
-  $("#timer").attr("value", time);
-  if (time === 0){
-    stopTimer();
+  if (timeToGuess >= 0) {
+  $("#timer").text(timeToGuess + " Seconds Remaining");
+  timeToGuess--;
+  }
+  else {
+    restartTimer();
     $("#question").hide();
     $("#answerChoices").hide();
     $("#result").show().text("Out of Time! " + "Correct answer: " + currentQuestion.answerArray[currentQuestion.answer]);
     setTimeout(loadQuestion, answerTime * 1000);
     incorrectAnswers++;
     document.getElementById("incorrectAnswers").innerHTML = incorrectAnswers;
-    time = 10;
-  };
+
+  }
 };
 
-function stopTimer() {
-  clearInterval(seconds);
+function restartTimer() {
+  clearInterval(timer);
+  timeToGuess = 10;
+  $("#timer").empty();
 };//end of timer//
 
 //startgame
 function startGame() {
   $("#correctAnswers").text(correctAnswers);
   $("#incorrectAnswers").text(incorrectAnswers);
-  $("#timer").text(time + " Seconds Remaining");
+  $("#timer").text(timeToGuess + " Seconds Remaining");
   $("#question").html("<img id='dwightStart' src='assets/images/dwightQuote.webp'/>");
   $("#result").hide();
   $("#answerChoices").hide();
@@ -122,7 +119,7 @@ function startGame() {
 
 //loading questions and answers
 function loadQuestion() {
-  if(correctAnswers + incorrectAnswers == questionsArray.length) {
+  if(correctAnswers + incorrectAnswers == 10) {
     showScore();
   } else {
     //pick question from array and display
@@ -130,11 +127,11 @@ function loadQuestion() {
   currentQuestion = questionsArray[questionIndex];
   questionsArray.splice(questionIndex, 1);
   $("#result").empty().hide();
-  $("#question").html(currentQuestion.question);
+  $("#question").show().html(currentQuestion.question);
   $("#answerChoices").show().find(".answer").each(function(i){
     $(this).html(currentQuestion.answerArray[i]);
   });
-  runTimer();
+  timer = setInterval(timeLeft, 1000);
 }
 
 };
@@ -157,8 +154,8 @@ function resultCorrect() {
   $("#question").hide();
   $("#answerChoices").hide();
   $("#result").show().text("Correct!");
+  restartTimer();
   setTimeout(loadQuestion, answerTime * 1000);
-  runTimer();
 };
 
 //end of each guess Incorrect Screen
@@ -166,12 +163,14 @@ function resultIncorrect() {
   $("#question").hide();
   $("#answerChoices").hide();
   $("#result").show().text("Incorrect!" + "Correct answer: " + currentQuestion.answerArray[currentQuestion.answer]);
+  restartTimer();
   setTimeout(loadQuestion, answerTime * 1000);
 };
+
 //show score at end of all questions
 function showScore() {
-  $("#question").text("Your Score for this round is: " + totalScore + " Click Restart to Play Again!");
-  $("#restart").show();
+  $("#result").text("Your Score for this round is: " + (correctAnswers * 100) - (incorrectAnswers * 100) + " Click Restart to Play Again!");
+  $("#restart").show().on("click", startGame);
 };
 
 //Gameplay
