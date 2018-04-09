@@ -86,6 +86,12 @@ ul{
   min-height: 100px;
 }
 
+#result {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
 .answer{
   transition: 0.5s;
   font-family: 'PT Mono', monospace;

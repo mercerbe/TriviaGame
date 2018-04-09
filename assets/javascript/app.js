@@ -87,8 +87,9 @@ function timeLeft() {
     setTimeout(loadQuestion, answerTime * 1000);
     incorrectAnswers++;
     document.getElementById("incorrectAnswers").innerHTML = incorrectAnswers;
-
-  }
+    console.log("%c Correct Answers: " + correctAnswers, 'background: green; color: white; width: 100%;');
+    console.log("%c Incorrect Answers: " + incorrectAnswers, 'background: red; color: white; width: 100%;');
+    }
 };
 
 function restartTimer() {
@@ -156,10 +157,14 @@ function guessMade() {
     correctAnswers++;
     $("#correctAnswers").text(correctAnswers);
     resultCorrect();
+    console.log("%c Correct Answers: " + correctAnswers, 'background: green; color: white; width: 100%;');
+    console.log("%c Incorrect Answers: " + incorrectAnswers, 'background: red; color: white; width: 100%;');
   } else {
     incorrectAnswers++;
     $("#incorrectAnswers").text(incorrectAnswers);
     resultIncorrect();
+    console.log("%c Correct Answers: " + correctAnswers, 'background: green; color: white; width: 100%;');
+    console.log("%c Incorrect Answers: " + incorrectAnswers, 'background: red; color: white; width: 100%;');
   }
 };
 
