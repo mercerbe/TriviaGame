@@ -92,6 +92,10 @@ ul{
   font-size: 25px;
 }
 
+#restart {
+  margin-left: 35%;
+}
+
 .answer{
   transition: 0.5s;
   font-family: 'PT Mono', monospace;

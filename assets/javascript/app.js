@@ -1,3 +1,5 @@
+//$.backstretch("assets/images/theOfficeBackground2.jpg");
+
 //Global Variables
 var index = 0
 var correctAnswers = 0;
@@ -53,7 +55,7 @@ var questionsArray = [
   answer: 0,
 },
 {
-  question: "What does Devon dress up as in Season 2 Halloween episode?",
+  question: "What does Devon dress up as in the Season 2 Halloween episode?",
   answerArray: ["A vampire", "A mummy", "A clown", "None of the Above"],
   answerTrue: [false, false, false, true],
   answer: 3,
@@ -71,6 +73,8 @@ var questionsArray = [
   answer: 3,
 },
 ];
+
+
 
 //FUNCTIONS:
 //timer
@@ -188,7 +192,7 @@ function resultIncorrect() {
 
 //show score at end of all questions
 function showScore() {
-  $("#result").text("Your Score for this round is: " + (correctAnswers * 100) - (incorrectAnswers * 100) + " Click Restart to Play Again!");
+  $("#result").text("Your Score for this round is: " + ((correctAnswers * 100) - (incorrectAnswers * 100)) + " Click Restart to Play Again!");
   $("#restart").show().on("click", startGame);
 };
 
