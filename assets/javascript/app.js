@@ -193,7 +193,9 @@ function resultIncorrect() {
 //show score at end of all questions
 function showScore() {
   $("#result").text("Your Score for this round is: " + ((correctAnswers * 100) - (incorrectAnswers * 100)) + " Click Restart to Play Again!");
-  $("#restart").show().on("click", startGame);
+  $("#restart").show().on("click", function(){
+    location.reload(true);
+  });
 };
 
 //Gameplay
