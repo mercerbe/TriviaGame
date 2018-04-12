@@ -13,6 +13,36 @@ var currentQuestion;
 //Questions array and question objects
 var questionsArray = [
 {
+  question: "What is Roy's brother's name?",
+  answerArray: ["Troy", "Kenny", "Nick", "Chris"],
+  answer: 1,
+},
+{
+  question: "What was the name of Pam's replacement while she was on maternity leave?",
+  answerArray: ["Karen", "Katherine", "Katie", "Kathy"],
+  answer: 3,
+},
+{
+  question: "Finish the quote...'R is one of the most menacing of sounds. That's why they call it 'murder' and not...",
+  answerArray:["mushdush", "mufduf", "mukduk", "mutmut"],
+  answer: 2,
+},
+{
+  question: "Who said this? “I saw wedding crashers accidentally. I bought a ticket for “Grizzly Man” and went into the wrong theatre. After an hour, I figured I was in the wrong theatre, but I kept waiting. Cuz that’s the thing about bear attacks… they come when you least expect it.”",
+  answerArray: ["Andy", "Michael", "Kevin", "Dwight"],
+  answer: 3,
+},
+{
+  question: "Which is NOT one of Michael's alter egos?",
+  answerArray: ["Michael the Magic", "Mike Leno", "Caleb Crawdad", "They are all alter egos"],
+  answer: 3,
+},
+{
+  question: "What did Ryan leave in the toaster oven that caused the fire in the episode, 'The Fire'?",
+  answerArray: ["a bagel", "a cheese pita", "a poptart", "a pita bread"],
+  answer: 2,
+},
+{
   question: "What does Todd Packers License plate say?",
   answerArray: ["PRVRT", "LOL69", "WLHUNG", "BOOB69"],
   answerTrue: [false, false, true, false],
