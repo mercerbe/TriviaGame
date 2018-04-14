@@ -28,7 +28,7 @@ var questionsArray = [
   answer: 2,
 },
 {
-  question: "Who said this? “I saw wedding crashers accidentally. I bought a ticket for “Grizzly Man” and went into the wrong theatre. After an hour, I figured I was in the wrong theatre, but I kept waiting. Cuz that’s the thing about bear attacks… they come when you least expect it.”",
+  question: "Who said this? '... I figured I was in the wrong theatre, but I kept waiting. Cuz that’s the thing about bear attacks… they come when you least expect it.'",
   answerArray: ["Andy", "Michael", "Kevin", "Dwight"],
   answer: 3,
 },
